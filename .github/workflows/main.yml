@@ -2,9 +2,9 @@ name: ci
 
 on:
   push:
-    branches: "docker/pipeline"
+    branches: docker/pipeline
   pull_request:
-    branches: "docker/pipeline"
+    branches: docker/pipeline
 
 jobs:
   build:
