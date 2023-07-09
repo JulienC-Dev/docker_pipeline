@@ -1,0 +1,12 @@
+name: ci
+
+on:
+  push:
+    branches: "docker/pipeline"
+  pull_request:
+    branches: [ "docker/pipeline" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
