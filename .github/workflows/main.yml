@@ -11,7 +11,7 @@ on:
 jobs:
   compile_and_test:
     runs-on: ubuntu-latest
-    name: Compile la web app et lance les tests
+    name: Compile web_app et tests web_app
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -23,8 +23,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest
-        
-  docker_horusec-security:
+  
+  horusec_scan_security_sast:
     name: Run Docker horusec-security
     runs-on: ubuntu-latest
     steps:
@@ -47,8 +47,8 @@ jobs:
       with:
         name: horusec-report
         path: horusec-report.json
-          
-  docker_build_run_test:
+
+  zap_scan_security_dast:
     needs: compile_and_test
     runs-on: ubuntu-latest
     name: Run Docker Container
@@ -77,7 +77,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with: 
-          json-file-output: snyk-report.json
+          args: test --all-projects --json-file-output=snyk-report.json
       - name: Upload Snyk scan report as an artifact
         uses: actions/upload-artifact@v2
         with:
@@ -85,7 +85,7 @@ jobs:
           path: snyk-report.json
 
   docker_publish:
-    needs: docker_build_run_test
+    needs: zap_scan_security_dast
     runs-on: ubuntu-latest
     name: Publish Docker Image
     steps:
