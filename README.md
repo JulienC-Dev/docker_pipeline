@@ -1,7 +1,7 @@
 # Développement d'une pipeline CI/CD avec Github Actions
 
 Ce README fournit des informations sur le projet en cours de création, qui vise à mettre en place une pipeline sécurisée GitHub Actions et Docker HUB. 
-L'objectif principal est d'appliquer et de respecter les principes d'évaluation des vulnérabilités (scanning) tels que SAST (Static Application Security Testing), DAST (Dynamic Application Security Testing) et SCA (Software Composition Analysis) à l'aide de différents outils open source pour une web App Flask. Les vulnérabilités sont extraites via des rapports avec l'aide des Artifacts GIT. Vous trouverez un format JSON pour l'analyse SAST et un format HTML pour l'analyse DAST pour chaque commit sur la branche "Main Docker_pipeline".
+L'objectif principal est d'appliquer et de respecter les principes d'évaluation des vulnérabilités (scanning) tels que SAST (Static Application Security Testing), DAST (Dynamic Application Security Testing) et SCA (Software Composition Analysis) à l'aide de différents outils open source pour une web App Flask. Les vulnérabilités sont extraites via des rapports avec l'aide des Artifacts GIT. Vous trouverez un format JSON pour l'analyse SAST, SCA et un format HTML pour l'analyse DAST pour chaque commit sur la branche "Main Docker_pipeline".
 
 Les rapports peuvent être récupérés et analysés ultérieurement via l'API GIT. 3 Artifacts
 
@@ -11,10 +11,10 @@ DAST :
 <img width="1435" alt="Capture d’écran 2023-07-23 à 02 23 28" src="images/img_owasp_zap_report.png">
 
 SAST : 
-<img width="1389" alt="Capture d’écran 2023-07-23 à 02 27 47" src="https://github.com/JulienC-Dev/docker_pipeline/assets/84323545/eba3a6df-e20f-45df-ad6c-ce3cfb167aab">
+<img width="1389" alt="Capture d’écran 2023-07-23 à 02 27 47" src="images/img_horusec_report.png">
 
 SCA : 
-<img width="1416" alt="Capture d’écran 2023-07-23 à 13 02 34" src="https://github.com/JulienC-Dev/pipeline_scan_report_webapp/assets/84323545/c0303d91-6a35-48ad-99cf-9177ad126ccf">
+<img width="1416" alt="Capture d’écran 2023-07-23 à 13 02 34" src="images/img_snyk_report.png">
 
 ## Workflow:
 
