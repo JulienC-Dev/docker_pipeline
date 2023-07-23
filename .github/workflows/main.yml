@@ -68,6 +68,22 @@ jobs:
           name: ZAP Report
           path: zap_report.html
 
+  synk_scan_security_and_sca:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/python-3.8@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with: 
+          json-file-output: snyk-report.json
+      - name: Upload Snyk scan report as an artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: security_sca_synk
+          path: snyk-report.json
+
   docker_publish:
     needs: docker_build_run_test
     runs-on: ubuntu-latest
