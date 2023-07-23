@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/JulienC-Dev/pipeline_scan_report_webapp/actions/workflows/codeql.yml/badge.svg)](https://github.com/JulienC-Dev/pipeline_scan_report_webapp/actions/workflows/codeql.yml)
+
 # Développement d'une pipeline CI/CD avec Github Actions
 
 Ce README fournit des informations sur le projet en cours de création, qui vise à mettre en place une pipeline sécurisée GitHub Actions et Docker HUB. 
