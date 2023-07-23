@@ -78,7 +78,13 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with: 
           json: snyk-report.json
+
+      - name: Save snyk Report
+        if: always()  # This ensures the step runs even if previous steps fail
+        run: mv ./snyk-report.json snyk-report.json
+
       - name: Upload Snyk scan report as an artifact
+        if: always()
         uses: actions/upload-artifact@v2
         with:
           name: security_sca_synk
