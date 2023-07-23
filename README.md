@@ -40,6 +40,11 @@ Configuration des actions GitHub pour déclencher automatiquement le pipeline lo
 
 - Gestion des résultats : Configuration ldes actions GitHub pour notifier les développeurs des résultats de chaque analyse de sécurité.
 
+## Comment récupérer les Rapports:
+les étapes : 
+- onglets "Actions" du projet
+- Récupérer le dernier Workflow "CI/CD & Security Scan"
+- Cliquer sur Artifacts
 
 ## Explications des Branch:
 dockercompose/app_db :
