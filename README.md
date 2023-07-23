@@ -3,7 +3,7 @@
 Ce README fournit des informations sur le projet en cours de création, qui vise à mettre en place une pipeline sécurisée GitHub Actions et Docker HUB. 
 L'objectif principal est d'appliquer et de respecter les principes d'évaluation des vulnérabilités (scanning) tels que SAST (Static Application Security Testing), DAST (Dynamic Application Security Testing) et SCA (Software Composition Analysis) à l'aide de différents outils open source pour une web App Flask. Les vulnérabilités sont extraites via des rapports avec l'aide des Artifacts GIT. Vous trouverez un format JSON pour l'analyse SAST et un format HTML pour l'analyse DAST pour chaque commit sur la branche "Main Docker_pipeline".
 
-Les rapports peuvent être récupérés et analysés ultérieurement via l'API GIT.
+Les rapports peuvent être récupérés et analysés ultérieurement via l'API GIT. 3 Artifacts
 
 De plus, Le projet vise également à sécuriser les dépôts publics associés.
 
@@ -13,6 +13,8 @@ DAST :
 SAST : 
 <img width="1389" alt="Capture d’écran 2023-07-23 à 02 27 47" src="https://github.com/JulienC-Dev/docker_pipeline/assets/84323545/eba3a6df-e20f-45df-ad6c-ce3cfb167aab">
 
+SCA : 
+<img width="1416" alt="Capture d’écran 2023-07-23 à 13 02 34" src="https://github.com/JulienC-Dev/pipeline_scan_report_webapp/assets/84323545/c0303d91-6a35-48ad-99cf-9177ad126ccf">
 
 ## Workflow:
 
@@ -31,10 +33,10 @@ Configuration des actions GitHub pour déclencher automatiquement le pipeline lo
   - Choix pour le projet : Owasp Zap - Effectue une analyse dynamique de l'application en exécutant des tests automatisés qui simulent des attaques réelles contre l'application. Cela permet de détecter les vulnérabilités qui peuvent être exploitées lors de l'exécution de l'application, telles que des injections SQL, des failles de cross-site scripting (XSS), etc.
 
 - Analyse SCA (Software Composition Analysis) : 
- - Choix pour le projet : En cours d'implémentation - Effectue une analyse des dépendances utilisées par l'application afin de détecter les composants logiciels avec des vulnérabilités connues. Cela garantit que les dépendances utilisées sont à jour et ne présentent pas de risques de sécurité.
+  - Choix pour le projet : Snyk - Effectue une analyse des dépendances utilisées par l'application afin de détecter les composants logiciels avec des vulnérabilités connues. Cela garantit que les dépendances utilisées sont à jour et ne présentent pas de risques de sécurité.
 
 - Déploiement de l'application Flask : 
- - Choix pour le projet : En cours d'implémentation - Utilise les outils de déploiement appropriés pour déployer l'application Flask dans l'environnement cible. L'environnement cible est en cours d'étude. Cela inclut la configuration des paramètres de l'application, l'installation des dépendances, la gestion des variables d'environnement, etc.
+  - Choix pour le projet : En cours d'implémentation - Utilise les outils de déploiement appropriés pour déployer l'application Flask dans l'environnement cible. L'environnement cible est en cours d'étude. Cela inclut la configuration des paramètres de l'application, l'installation des dépendances, la gestion des variables d'environnement, etc.
 
 - Gestion des résultats : Configuration ldes actions GitHub pour notifier les développeurs des résultats de chaque analyse de sécurité.
 
