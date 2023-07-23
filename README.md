@@ -1,6 +1,4 @@
-[![CodeQL](https://github.com/JulienC-Dev/pipeline_scan_report_webapp/actions/workflows/codeql.yml/badge.svg)](https://github.com/JulienC-Dev/pipeline_scan_report_webapp/actions/workflows/codeql.yml)
-
-[![CI/CD & Security Scan](https://github.com/JulienC-Dev/pipeline_scan_report_webapp/actions/workflows/main.yml/badge.svg)](https://github.com/JulienC-Dev/pipeline_scan_report_webapp/actions/workflows/main.yml)
+[![CodeQL](https://github.com/JulienC-Dev/pipeline_scan_report_webapp/actions/workflows/codeql.yml/badge.svg)](https://github.com/JulienC-Dev/pipeline_scan_report_webapp/actions/workflows/codeql.yml) [![CI/CD & Security Scan](https://github.com/JulienC-Dev/pipeline_scan_report_webapp/actions/workflows/main.yml/badge.svg)](https://github.com/JulienC-Dev/pipeline_scan_report_webapp/actions/workflows/main.yml)
 
 # Développement d'une pipeline CI/CD avec Github Actions
 
