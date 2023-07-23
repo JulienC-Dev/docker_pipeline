@@ -42,6 +42,10 @@ Configuration des actions GitHub pour déclencher automatiquement le pipeline lo
 
 - Gestion des résultats : Configuration ldes actions GitHub pour notifier les développeurs des résultats de chaque analyse de sécurité.
 
+## vulnérabilités détectées sur la pipeline :
+- La pipeline actuelle n'est pas appropriée pour une utilisation en production car elle ne parvient pas à traiter les vulnérabilités détectées tout au long du processus. Afin de la rendre adaptée à une mise en production, il est essentiel d'effectuer un paramétrage plus avancé sur chaque job. De cette manière, la pipeline pourra répondre de manière adéquate aux vulnérabilités identifiées, en prenant des mesures telles que l'arrêt du processus en cas de vulnérabilité critique ou l'automatisation des correctifs pour les dépendances vulnérables.
+Aussi, une pipeline en production ne doit en aucun cas pousser du code vers les serveurs de production si des vulnérabilités sont critiques présentes.  
+
 ## Comment récupérer les Rapports:
 les étapes : 
 - onglets "Actions" du projet
@@ -57,3 +61,9 @@ dockercompose/app_db :
 docker compose -f docker-compose.dev.yml up --build
 Explication : 
 - Cette commande permt de rouler les conteneurs mysqldb et l'application web via le paramétrage de l'environnement docker-compose. Le port exposé du conteneur est le 8000, il est accessible uniquement localement via "http://127.0.0.1:8000"
+
+## Aide pour la réalisation du README et du projet
+- Chatgpt 3.5
+- stack overflow
+- youtube
+- git https://docs.github.com/fr
