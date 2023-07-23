@@ -43,8 +43,13 @@ Configuration des actions GitHub pour déclencher automatiquement le pipeline lo
 - Gestion des résultats : Configuration ldes actions GitHub pour notifier les développeurs des résultats de chaque analyse de sécurité.
 
 ## vulnérabilités détectées sur la pipeline :
-- La pipeline actuelle n'est pas appropriée pour une utilisation en production car elle ne parvient pas à traiter les vulnérabilités détectées tout au long du processus. Afin de la rendre adaptée à une mise en production, il est essentiel d'effectuer un paramétrage plus avancé sur chaque job. De cette manière, la pipeline pourra répondre de manière adéquate aux vulnérabilités identifiées, en prenant des mesures telles que l'arrêt du processus en cas de vulnérabilité critique ou l'automatisation des correctifs pour les dépendances vulnérables.
+- La pipeline actuelle n'est pas appropriée pour une utilisation en production car elle ne stop pas les vulnérabilités détectées tout au long du processus. Afin de la rendre adaptée à une mise en production, il est essentiel d'effectuer un paramétrage plus avancé sur chaque job. De cette manière, la pipeline pourra répondre de manière adéquate aux vulnérabilités identifiées, en prenant des mesures telles que l'arrêt du processus en cas de vulnérabilité critique ou l'automatisation des correctifs pour les dépendances vulnérables.
 Aussi, une pipeline en production ne doit en aucun cas pousser du code vers les serveurs de production si des vulnérabilités sont critiques présentes.  
+
+Paramétrage à modifier : 
+- supprimer l'argument || true sur le Owasp Zap
+- mettre le booléen à True, actuellement -e="false" sur le horusec 
+
 
 ## Comment récupérer les Rapports:
 les étapes : 
