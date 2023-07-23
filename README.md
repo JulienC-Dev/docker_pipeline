@@ -8,7 +8,7 @@ Les rapports peuvent être récupérés et analysés ultérieurement via l'API G
 De plus, Le projet vise également à sécuriser les dépôts publics associés.
 
 DAST : 
-<img width="1435" alt="Capture d’écran 2023-07-23 à 02 23 28" src="https://github.com/JulienC-Dev/docker_pipeline/assets/84323545/318953c6-6fbe-42cb-8ec2-4f74e10dd3d8">
+<img width="1435" alt="Capture d’écran 2023-07-23 à 02 23 28" src="images/img_owasp_zap_report.png">
 
 SAST : 
 <img width="1389" alt="Capture d’écran 2023-07-23 à 02 27 47" src="https://github.com/JulienC-Dev/docker_pipeline/assets/84323545/eba3a6df-e20f-45df-ad6c-ce3cfb167aab">
