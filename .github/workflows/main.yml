@@ -25,6 +25,7 @@ jobs:
         run: pytest
   
   horusec_scan_security_sast:
+    needs: compile_and_test
     name: Run Docker horusec-security
     runs-on: ubuntu-latest
     steps:
@@ -69,6 +70,7 @@ jobs:
           path: zap_report.html
 
   synk_scan_security_and_sca:
+    needs: compile_and_test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -87,7 +89,10 @@ jobs:
           path: snyk-report.json
 
   docker_publish:
-    needs: zap_scan_security_dast
+    needs: 
+      - horusec_scan_security_sast
+      - zap_scan_security_dast
+      - synk_scan_security_and_sca
     runs-on: ubuntu-latest
     name: Publish Docker Image
     steps:
