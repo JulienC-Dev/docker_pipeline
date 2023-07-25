@@ -9,4 +9,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
    
-CMD ["python", "-m" , "flask", "run", "--host=0.0.0.0", "--port=8000"]
+CMD  ["gunicorn", "app:app", "--bind", "0.0.0.0:80", "--workers", "4"]
