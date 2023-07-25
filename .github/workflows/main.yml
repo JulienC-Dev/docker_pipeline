@@ -112,3 +112,22 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/app_pipeline:latest
+  deployment_server:
+    needs:
+      - docker_publish
+    runs-on: ubuntu-latest
+    name: Deploy on server linode
+    steps:
+      - name: Install ssh-agent
+        uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Deploy on server
+        run: |
+          ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} 'bash -s' << EOF
+          docker stop $(docker ps -q)
+          docker pull app_pipeline:latest
+          docker run -d -p 80:80 julienx2/app_pipeline
+          EOF
+  
+
