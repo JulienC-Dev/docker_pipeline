@@ -59,7 +59,7 @@ jobs:
       - name: Run Docker container and test Dast
         run: |
           docker build -t app_pipeline:latest .
-          docker run -d -p 8000:8000 --name app_pipeline app_pipeline:latest
+          docker run -d -p 8000:80 --name app_pipeline app_pipeline:latest
           containerip=$(docker inspect -f "{{.NetworkSettings.Networks.bridge.IPAddress }}" app_pipeline)
           docker pull owasp/zap2docker-stable:latest || echo
           docker run --rm -v $(pwd):/zap/wrk -u $(id -u):$(id -g) --user root:root owasp/zap2docker-stable zap-baseline.py -t http://$containerip:8000 -r zap_report.html || true
