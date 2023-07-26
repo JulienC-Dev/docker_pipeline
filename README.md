@@ -38,7 +38,7 @@ Configuration des actions GitHub pour déclencher automatiquement le pipeline lo
   - Choix pour le projet : Snyk - Effectue une analyse des dépendances utilisées par l'application afin de détecter les composants logiciels avec des vulnérabilités connues. Cela garantit que les dépendances utilisées sont à jour et ne présentent pas de risques de sécurité.
 
 - Déploiement de l'application Flask : 
-  - Choix pour le projet : En cours d'implémentation - Utilise les outils de déploiement appropriés pour déployer l'application Flask dans l'environnement cible. L'environnement cible est en cours d'étude. Cela inclut la configuration des paramètres de l'application, l'installation des dépendances, la gestion des variables d'environnement, etc.
+  - Choix pour le projet : Déployement sur le serveur distant linode. Cela inclut la configuration et la gestion des secrets.
 
 - Gestion des résultats : Configuration ldes actions GitHub pour notifier les développeurs des résultats de chaque analyse de sécurité.
 
