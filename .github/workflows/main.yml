@@ -128,8 +128,8 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} 'bash -s' << EOF
           docker stop $(docker ps -q)
-          docker pull app_pipeline:latest
-          docker run -d -p 80:80 julienx2/app_pipeline
+          docker pull julienx2/app_pipeline:latest
+          docker run -d -p 80:80 app_pipeline:latest
           EOF
   
 
